@@ -1,1 +1,3 @@
-== ITC-GIC ==
+# Khmer-reco
+
+Khmer speech recognition.
