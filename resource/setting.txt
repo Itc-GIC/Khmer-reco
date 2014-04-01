@@ -1,0 +1,3 @@
+language=2
+recent_open=oijwef;woeijf;owiejf;owijef;owiejf
+template=1
