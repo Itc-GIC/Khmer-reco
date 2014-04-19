@@ -81,7 +81,7 @@ public class Recognition {
 		
 		float sampleRate = 16000.0F;
 		//8000,11025,16000,22050,44100
-		int sampleSizeInBits = 8;
+		int sampleSizeInBits = 16;
 		//8,16
 		int channels = 1;
 		int frameSize = 2;
