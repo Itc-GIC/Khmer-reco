@@ -22,9 +22,6 @@ public class Recorder extends Thread{
 	private String tmpFileDir = "resource/tmp_file_dir/";
 	
 	
-	
-	
-	
 	//add 201013
 	public Recorder(String fileName) throws LineUnavailableException{
 		/*int Order = 0;
@@ -90,19 +87,20 @@ public class Recorder extends Thread{
 	}
 	
 	private AudioFormat getAudioFormat(){
-		AudioFormat.Encoding technique = AudioFormat.Encoding.PCM_SIGNED;
-		float sampleRate = 16000.0F;
-		//8000,11025,16000,22050,44100
-		int sampleSizeInBits = 16;
-		//8,16
-		int channels = 1;
-		int frameSize = 2;
-		float frameRate = 16000.0F;
-		//1,2
-		boolean bigEndian = true;
-		//true,false
-		return new AudioFormat(technique,sampleRate,sampleSizeInBits,channels,frameSize,frameRate,bigEndian);
-	}	
+	    try{
+	        return getAudio().getFormat();
+	    } catch(Exception e) {
+	        AudioFormat.Encoding technique = AudioFormat.Encoding.PCM_SIGNED;
+	        float sampleRate = 16000.0F; // 8000,11025,16000,22050,44100
+	        int sampleSizeInBits = 16; // 8,16
+	        int channels = 1; // 1(mono),2(stereo)
+	        int frameSize = 2; // bytes per frame
+	        float frameRate = 16000.0F; // frames per second
+	        boolean bigEndian = true; // true(big-endian),false(little-endian)
+	        
+	        return new AudioFormat(technique, sampleRate, sampleSizeInBits, channels, frameSize, frameRate, bigEndian);
+	    }
+	}
 	
 	public AudioInputStream getAudio() throws UnsupportedAudioFileException, IOException{
 		return AudioSystem.getAudioInputStream(audioFile);
