@@ -43,15 +43,31 @@ public class AudioManager {
      */
     public void run() {
         try {
-
-            for(Path path : getDS()) {
-                for(IDevice device : this.devices) {
-                    device.play(path.toFile());
-                }
-            }
-
+            play();
         } catch (IOException e) {
             e.printStackTrace();
+        }
+        deallocate();
+    }
+    
+    /**
+     * Run play command from added devices
+     * @throws IOException
+     */
+    private void play() throws IOException {
+        for(Path path : getDS()) {
+            for(IDevice device : this.devices) {
+                device.play(path.toFile());
+            }
+        }
+    }
+    
+    /**
+     * Run deallocate command from added devices
+     */
+    private void deallocate() {
+        for(IDevice device : this.devices) {
+            device.deallocate();
         }
     }
     

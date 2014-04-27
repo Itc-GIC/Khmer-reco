@@ -123,7 +123,7 @@ public class Recognition {
 		         Recorder rec = new Recorder(dir+file.getName());
 		        // Recorder r = null;
 		         
-		         System.out.println("text reco: "+reg.translateSpeech(rec.getAudio()));
+               System.out.println("text reco: "+reg.translateSpeech(rec.getAudio()));
 		         
 		         list_fileName.add(file.getName());		        		        
 		     }

@@ -7,7 +7,7 @@ import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
-public class AudioFormatPrinter implements IDevice {
+public class AudioFormatPrinter extends DeviceBase {
     
     private final String FORMAT = "%35s: %s\n";
 

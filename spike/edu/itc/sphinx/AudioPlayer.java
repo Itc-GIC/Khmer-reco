@@ -11,7 +11,7 @@ import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.SourceDataLine;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
-public class AudioPlayer implements IDevice {
+public class AudioPlayer extends DeviceBase {
     
     private final int BUFFER_SIZE = 128000;
     

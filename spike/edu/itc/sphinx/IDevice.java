@@ -8,4 +8,9 @@ public interface IDevice {
      * Play command
      */
     public void play(File file);
+    
+    /**
+     * Deallocate command
+     */
+    public void deallocate();
 }
